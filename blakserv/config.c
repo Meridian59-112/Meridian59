@@ -88,6 +88,7 @@ config_table_type config_table[] =
 { LOGIN_MAX_ATTEMPTS,     F, "MaxAttempts",   CONFIG_INT,   "3" },
 { LOGIN_CLASSIC_MIN_VERSION, T, "MinClassicVersion", CONFIG_INT,   "0" },
 { LOGIN_OGRE_MIN_VERSION,    T, "MinOgreVersion",    CONFIG_INT,   "0" },
+{ LOGIN_GODOT_MIN_VERSION,   T, "MinGodotVersion",   CONFIG_INT,   "0" },
 { LOGIN_OLD_VERSION_STR,  F, "OldVersionStr", CONFIG_STR,   
      "The game software has been upgraded while you have been online. Logoff and "
      "then login again to automatically upgrade your software." },
@@ -164,6 +165,16 @@ config_table_type config_table[] =
 { UPDATE_OGRE_PATCH_TXT, T, "OgrePatchTxt" ,CONFIG_STR, "" },
 { UPDATE_OGRE_CLUB_EXE, T,  "OgreClubExe"  ,CONFIG_STR, "" },
 
+/* Godot client (version major 91): its own complete list per platform (program + game data) on GodotPatchHost,
+   like the Ogre entries above (PatchPath = folder of the files, PatchCachePath = folder of the list).
+   Empty GodotPatchHost = no updates for Godot. */
+{ UPDATE_GODOT_PATCH_ROOT, T, "GodotPatchHost" ,CONFIG_STR, "" },
+{ UPDATE_GODOT_PATCH_PATH_LINUX, T, "GodotPatchPathLinux" ,CONFIG_STR, "" },
+{ UPDATE_GODOT_PATCH_CACHE_PATH_LINUX, T, "GodotPatchCachePathLinux" ,CONFIG_STR, "" },
+{ UPDATE_GODOT_PATCH_PATH_WINDOWS, T, "GodotPatchPathWindows" ,CONFIG_STR, "" },
+{ UPDATE_GODOT_PATCH_CACHE_PATH_WINDOWS, T, "GodotPatchCachePathWindows" ,CONFIG_STR, "" },
+{ UPDATE_GODOT_PATCH_TXT, T, "GodotPatchTxt" ,CONFIG_STR, "" },
+
 { CONSOLE_GROUP,          F, "[Console]",     CONFIG_GROUP, "" },
 { CONSOLE_ADMINISTRATOR,  F, "Administrator", CONFIG_STR,   "Administrator" },
 { CONSOLE_CAPTION,        F, "Caption",       CONFIG_STR,   "BlakSton Server" },
@@ -214,6 +225,10 @@ config_table_type config_table[] =
 { MYSQL_HOST,             F, "Host",          CONFIG_STR,   "localhost" },
 { MYSQL_CPORT,            F, "Port",          CONFIG_INT,   "3306" },
 { MYSQL_DB,               F, "Database",      CONFIG_STR,   "meridian" },
+{ POSTGRES_SSLMODE,       F, "SSLMode",       CONFIG_STR,   "" },
+{ POSTGRES_SSLROOTCERT,   F, "SSLRootCert",   CONFIG_STR,   "" },
+{ POSTGRES_SSLCERT,       F, "SSLCert",       CONFIG_STR,   "" },
+{ POSTGRES_SSLKEY,        F, "SSLKey",        CONFIG_STR,   "" },
 
 { BLAKOD_GROUP,           F, "[Blakod]",      CONFIG_GROUP, "" },
 { BLAKOD_MATCHES_LIST_MAX,T, "MatchesList",   CONFIG_INT,   "10000" },
